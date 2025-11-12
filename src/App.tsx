@@ -8,7 +8,7 @@ import kebab from "../public/zazakebab.jpg";
 import baklava2 from "../public/zazabaklava2.jpg";
 import kebab3 from "../public/zazakebab3.jpg";
 import coals2 from "../public/zazacoals2.jpg";
-import menu from "../public/menu.pdf";
+import menu from "../public/menu-updated.pdf";
 import desertmenu from "../public/desertmenu.pdf";
 
 const aboutUsContent = (
