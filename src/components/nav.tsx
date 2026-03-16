@@ -16,12 +16,18 @@ export const Nav = () => {
   }, [isMobile]);
 
   const linkBaseClasses =
-    "block lg:inline-flex lg:items-center lg:justify-center mt-2 lg:mt-0 px-3 py-1.5 text-sm font-medium rounded-full transition-colors hover:text-amber-300 hover:bg-white/5";
+    "block w-full text-center lg:w-auto lg:inline-flex lg:items-center lg:justify-center mt-1.5 lg:mt-0 px-3 py-2 text-sm font-medium rounded-full transition-colors hover:text-amber-300 hover:bg-white/5";
+
+  const handleNavClick = () => {
+    if (isMobile) {
+      setOpen(false);
+    }
+  };
 
   return (
-    <header className="sticky top-0 z-30 backdrop-blur-lg bg-black/70 border-b border-white/10">
+    <header className="sticky top-0 z-30 backdrop-blur-lg bg-black/80 border-b border-white/10">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-shrink-0">
           <img
             alt="Aya restaurant logo"
             src={logo}
@@ -39,33 +45,42 @@ export const Nav = () => {
 
         <button
           aria-label="Toggle navigation"
-          className="inline-flex items-center justify-center rounded-full border border-white/20 p-2 text-white hover:border-amber-300 hover:text-amber-300 lg:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-white/25 p-2 text-white hover:border-amber-300 hover:text-amber-300 lg:hidden"
           onClick={() => setOpen((prev) => !prev)}
         >
           <img src={hamburger} alt="Menu icon" width={22} height={22} />
         </button>
 
         <div
-          className={`w-full lg:w-auto lg:flex lg:items-center lg:gap-1 ${
-            open ? "mt-4 lg:mt-0" : "hidden lg:flex"
+          className={`${
+            open
+              ? "absolute inset-x-0 top-full mt-2 px-4 pb-3 lg:static lg:mt-0 lg:px-0"
+              : "hidden lg:block"
           }`}
         >
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-end gap-1 lg:gap-2 ml-auto">
-            <a href="#aboutUs" className={linkBaseClasses}>
-              About us
-            </a>
-            <a href="#menu" className={linkBaseClasses}>
-              Menu
-            </a>
-            <a href="#reservations" className={linkBaseClasses}>
-              Reservations
-            </a>
-            <a
-              href="tel:01924565075"
-              className="mt-3 lg:mt-0 inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-1.5 text-sm font-semibold text-black shadow-sm shadow-amber-500/40 hover:bg-amber-300 transition-colors"
-            >
-              Book a table
-            </a>
+          <div className="rounded-2xl border border-white/10 bg-black/95 backdrop-blur-xl shadow-xl shadow-black/40 lg:border-0 lg:bg-transparent lg:shadow-none">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-end gap-1.5 lg:gap-2 px-3 py-3 lg:px-0 lg:py-0">
+              <a href="#aboutUs" className={linkBaseClasses} onClick={handleNavClick}>
+                About us
+              </a>
+              <a href="#menu" className={linkBaseClasses} onClick={handleNavClick}>
+                Menu
+              </a>
+              <a
+                href="#reservations"
+                className={linkBaseClasses}
+                onClick={handleNavClick}
+              >
+                Reservations
+              </a>
+              <a
+                href="tel:01924565075"
+                className="mt-1.5 lg:mt-0 inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-2 text-sm font-semibold text-black shadow-sm shadow-amber-500/40 hover:bg-amber-300 transition-colors w-full lg:w-auto text-center"
+                onClick={handleNavClick}
+              >
+                Book a table
+              </a>
+            </div>
           </div>
         </div>
       </nav>
