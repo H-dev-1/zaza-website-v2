@@ -113,8 +113,57 @@ export const App = () => {
   return (
     <>
       <Nav />
-      <ImageFullWidth img={kebab} />
-      <div id="aboutUs">
+      {/* Hero */}
+      <section
+        className="relative overflow-hidden bg-gradient-to-b from-black via-black/90 to-zinc-950"
+        aria-labelledby="hero-heading"
+      >
+        <div
+          className="pointer-events-none absolute inset-0 opacity-60 mix-blend-screen"
+          style={{
+            backgroundImage: `url('${kebab}')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
+          <div className="max-w-2xl animate-fade-in-up">
+            <p className="text-sm font-semibold tracking-[0.25em] text-amber-300 uppercase">
+              Authentic Turkish Cuisine
+            </p>
+            <h1
+              id="hero-heading"
+              className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white"
+            >
+              Aya, Turkish cuisine in the heart of Wakefield.
+            </h1>
+            <p className="mt-6 text-base sm:text-lg text-zinc-300 max-w-xl">
+              Flame-grilled kebabs, vibrant meze and warm Turkish hospitality.
+              Join us for dinner, celebrations or a cosy night with friends and
+              family.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a
+                href={menu}
+                target="_blank"
+                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-colors"
+              >
+                Main menu
+              </a>
+              <a
+                href={desertmenu}
+                target="_blank"
+                className="inline-flex items-center justify-center rounded-full border border-zinc-600 px-6 py-3 text-sm font-semibold text-white hover:border-amber-400 hover:text-amber-300 transition-colors"
+              >
+                Desserts menu
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <div id="aboutUs" className="animate-fade-in-up animation-delay-200">
         <TextWithPhoto
           title="About Aya"
           content={aboutUsContent}
@@ -122,19 +171,29 @@ export const App = () => {
           imgPosition="right"
         />
       </div>
+
+      {/* Feature image */}
       <ImageFullWidth img={baklava2} />
-      <div id="menu">
+
+      {/* Menu */}
+      <div id="menu" className="animate-fade-in-up animation-delay-400">
         <TextWithPhoto
-          title="Menu"
+          title="Our Menu"
           img={kebab3}
           content={menuContent}
           imgPosition="left"
         />
       </div>
+
+      {/* Flames image */}
       <ImageFullWidth img={coals2} />
-      <div id="reservations">
+
+      {/* Reservations */}
+      <div id="reservations" className="animate-fade-in-up animation-delay-400">
         <Reservations title="Reservations" content={reservationContent} />
       </div>
+
+      {/* Footer / directions */}
       <div id="directions">
         <Footer />
       </div>

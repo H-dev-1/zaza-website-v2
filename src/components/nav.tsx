@@ -5,71 +5,70 @@ import logo from "../../public/logonew.jpg";
 
 export const Nav = () => {
   const isMobile = useMediaQuery({ maxWidth: 1023 });
-  const [showMenu, setShowMenu] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setShowMenu(!isMobile);
+    if (!isMobile) {
+      setOpen(true);
+    } else {
+      setOpen(false);
     }
   }, [isMobile]);
 
-  console.log(showMenu);
+  const linkBaseClasses =
+    "block lg:inline-flex lg:items-center lg:justify-center mt-2 lg:mt-0 px-3 py-1.5 text-sm font-medium rounded-full transition-colors hover:text-amber-300 hover:bg-white/5";
 
   return (
-    <div className="top-0 z-20">
-      <nav className="bg-black py-4">
-        <div className="container mx-auto flex items-center justify-between flex-wrap">
-          <div className="flex items-center flex-shrink-0 text-white ml-4 my-2">
-            <img alt="logo" src={logo} width={100} />
+    <header className="sticky top-0 z-30 backdrop-blur-lg bg-black/70 border-b border-white/10">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <img
+            alt="Aya restaurant logo"
+            src={logo}
+            className="h-12 w-auto border border-white/10 shadow-md rounded-md object-contain bg-black"
+          />
+          <div className="hidden sm:flex flex-col">
+            <span className="text-sm font-semibold tracking-[0.25em] uppercase text-amber-300">
+              Aya
+            </span>
+            <span className="text-xs text-zinc-300">
+              Turkish Restaurant
+            </span>
           </div>
-          <div className="lg:hidden">
-            <button
-              aria-label="Menu"
-              className="navbar-burger flex items-center p-2"
-              onClick={() => setShowMenu(!showMenu)}
+        </div>
+
+        <button
+          aria-label="Toggle navigation"
+          className="inline-flex items-center justify-center rounded-full border border-white/20 p-2 text-white hover:border-amber-300 hover:text-amber-300 lg:hidden"
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <img src={hamburger} alt="Menu icon" width={22} height={22} />
+        </button>
+
+        <div
+          className={`w-full lg:w-auto lg:flex lg:items-center lg:gap-1 ${
+            open ? "mt-4 lg:mt-0" : "hidden lg:flex"
+          }`}
+        >
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-end gap-1 lg:gap-2 ml-auto">
+            <a href="#aboutUs" className={linkBaseClasses}>
+              About us
+            </a>
+            <a href="#menu" className={linkBaseClasses}>
+              Menu
+            </a>
+            <a href="#reservations" className={linkBaseClasses}>
+              Reservations
+            </a>
+            <a
+              href="tel:01924565075"
+              className="mt-3 lg:mt-0 inline-flex items-center justify-center rounded-full bg-amber-400 px-4 py-1.5 text-sm font-semibold text-black shadow-sm shadow-amber-500/40 hover:bg-amber-300 transition-colors"
             >
-              <img src={hamburger} alt="Menu icon" width={24} height={24} />
-            </button>
+              Book a table
+            </a>
           </div>
-          {showMenu && (
-            <div className="mx-2 ml-4 w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-              <div className="text-sm lg:flex-grow"></div>
-              <div>
-                <a
-                  href="#aboutUs"
-                  className={`block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                >
-                  About Us
-                </a>
-                <a
-                  href="#menu"
-                  className={`block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                >
-                  Menu
-                </a>
-                {/* <a
-                  href="#gallery"
-                  className={`block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                >
-                  Gallery
-                </a> */}
-                <a
-                  href="#reservations"
-                  className={`block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                >
-                  Reservations
-                </a>
-                <a
-                  href="#directions"
-                  className={`block mt-4 lg:inline-block lg:mt-0 mr-4`}
-                >
-                  Directions
-                </a>
-              </div>
-            </div>
-          )}
         </div>
       </nav>
-    </div>
+    </header>
   );
 };
