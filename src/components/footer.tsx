@@ -50,12 +50,8 @@ export const Footer = () => {
           <div className="mt-3 flex flex-col gap-2 text-sm">
             <div className="inline-flex items-center gap-2 self-start rounded-full border border-amber-500/40 bg-amber-500/10 px-4 py-1 text-[13px] text-amber-200 shadow-sm">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>Open 7 days a week</span>
+              <span>Open 7 days a week 12pm - 11pm</span>
             </div>
-            <p className="text-zinc-300">
-              <span className="font-medium text-white">Opening times</span>{" "}
-              <span className="text-zinc-400">12pm – 11pm</span>
-            </p>
           </div>
         </div>
 
