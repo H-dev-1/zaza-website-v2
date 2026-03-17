@@ -8,8 +8,6 @@ import kebab from "../public/zazakebab.jpg";
 import baklava2 from "../public/zazabaklava2.jpg";
 import kebab3 from "../public/zazakebab3.jpg";
 import coals2 from "../public/zazacoals2.jpg";
-import ayaMainMenu from "../public/aya-main-menu.pdf";
-import ayaDesertMenu from "../public/aya-desert-menu.pdf";
 
 const aboutUsContent = (
   <>
@@ -68,8 +66,9 @@ const menuContent = (
       </p>
       <a
         className="inline-flex text-xl cursor-pointer mr-2"
-        href={ayaMainMenu}
+        href="/aya-main-menu-updated.pdf"
         target="_blank"
+        rel="noreferrer"
       >
         <i
           className="fa-solid fa-utensils fa-2x"
@@ -78,8 +77,9 @@ const menuContent = (
       </a>
       <a
         className="inline-flex text-xl cursor-pointer ml-2"
-        href={ayaDesertMenu}
+        href="/aya-desert-menu-updated.pdf"
         target="_blank"
+        rel="noreferrer"
       >
         <i
           className="fa-solid fa-ice-cream fa-2x"
@@ -144,15 +144,17 @@ export const App = () => {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
-                href={ayaMainMenu}
+                href="/aya-main-menu-updated.pdf"
                 target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-colors"
               >
                 Main menu
               </a>
               <a
-                href={ayaDesertMenu}
+                href="/aya-desert-menu-updated.pdf"
                 target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-full border border-zinc-600 px-6 py-3 text-sm font-semibold text-white hover:border-amber-400 hover:text-amber-300 transition-colors"
               >
                 Desserts menu
