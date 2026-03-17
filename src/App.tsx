@@ -8,8 +8,8 @@ import kebab from "../public/zazakebab.jpg";
 import baklava2 from "../public/zazabaklava2.jpg";
 import kebab3 from "../public/zazakebab3.jpg";
 import coals2 from "../public/zazacoals2.jpg";
-import menu from "../public/menu-updated.pdf";
-import desertmenu from "../public/desertmenu.pdf";
+import ayaMainMenu from "../public/aya-main-menu.pdf";
+import ayaDesertMenu from "../public/aya-desert-menu.pdf";
 
 const aboutUsContent = (
   <>
@@ -68,7 +68,7 @@ const menuContent = (
       </p>
       <a
         className="inline-flex text-xl cursor-pointer mr-2"
-        href={menu}
+        href={ayaMainMenu}
         target="_blank"
       >
         <i
@@ -78,7 +78,7 @@ const menuContent = (
       </a>
       <a
         className="inline-flex text-xl cursor-pointer ml-2"
-        href={desertmenu}
+        href={ayaDesertMenu}
         target="_blank"
       >
         <i
@@ -137,21 +137,21 @@ export const App = () => {
             >
               Aya, Turkish cuisine in the heart of Wakefield.
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-zinc-300 max-w-xl">
+            <p className="mt-6 text-base sm:text-lg text-white max-w-xl">
               Flame-grilled kebabs, vibrant meze and warm Turkish hospitality.
               Join us for dinner, celebrations or a cosy night with friends and
               family.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
-                href={menu}
+                href={ayaMainMenu}
                 target="_blank"
                 className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold text-black shadow-lg shadow-amber-500/40 hover:bg-amber-300 transition-colors"
               >
                 Main menu
               </a>
               <a
-                href={desertmenu}
+                href={ayaDesertMenu}
                 target="_blank"
                 className="inline-flex items-center justify-center rounded-full border border-zinc-600 px-6 py-3 text-sm font-semibold text-white hover:border-amber-400 hover:text-amber-300 transition-colors"
               >
